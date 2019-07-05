@@ -30,7 +30,7 @@ export class HomePage  {
     this.barcodeScanner
       .scan()
       .then(barcodeData => {
-        //alert("Barcode data " + JSON.stringify(barcodeData));
+        alert("Barcode data " + JSON.stringify(barcodeData));
         this.scannedData = barcodeData;
         this.router.navigate(['/login']);
       })

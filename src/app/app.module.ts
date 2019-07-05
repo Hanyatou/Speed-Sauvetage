@@ -10,6 +10,9 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx'
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { RemoteServiceService } from './remote-service.service';
+import { HttpClientModule } from '@angular/common/http';
+import 'rxjs/add/operator/map';
 
 
 @NgModule({
@@ -18,13 +21,16 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
     BarcodeScanner,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    RemoteServiceService,
   ],
   bootstrap: [AppComponent]
 })
